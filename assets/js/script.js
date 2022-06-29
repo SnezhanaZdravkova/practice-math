@@ -7,15 +7,15 @@ let result = {
     wrongAnswer: 0
 }
 function updateGame(){
-    result.currentGame = generateGame()
-    gameElement.innerHTML = `${result.currentGame.numOne} ${result.currentGame.operator} ${result.currentGame.numTwo}`
-    ourField.value = ""
-    ourField.focus()
+    result.currentGame = generateGame();
+    gameElement.innerHTML = `${result.currentGame.numOne} ${result.currentGame.operator} ${result.currentGame.numTwo}`;
+    ourField.value = "";
+    ourField.focus();
 }
 updateGame();
 //function - creates random number between 1 and 25
 function generateNumber(max){
-    return Math.floor(Math.random() * max + 1)
+    return Math.floor(Math.random() * max + 1);
 }
 //returns random number one, random number two and random choice of the operator "+" or "-"
 function generateGame(){
@@ -24,4 +24,16 @@ function generateGame(){
         numTwo: generateNumber(25),
         operator: ["+", "-"][1]   
     }   
+}
+ourForm.addEventListener("submit", handleSubmit);
+//let e=event
+function handleSubmit(e){
+    e.preventDefault();
+    let correctAnswer
+    const b = result.currentGame;
+    if(b.operator == "+"){
+        correctAnswer = b.numOne + b.numTwo;
+    }else if(b.operator == "-"){
+        correctAnswer = b.numOne - b.numTwo;
+    }
 }
