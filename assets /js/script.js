@@ -1,4 +1,6 @@
-
+const gameElement = document.querySelector(".game")
+const ourForm = document.querySelector(".our-form")
+const ourField = document.querySelector(".our-field")
 //function - creates random number between 1 and 25
 function genetateNumber(){
     return Math.floor(Math.random()*25 + 1)
