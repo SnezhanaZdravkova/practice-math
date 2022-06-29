@@ -18,6 +18,6 @@ let result = {
 }
 function updateGame(){
     state.currentGame = generateGame();
-    gameElement.innerHTML = `${state.currentGame.numOne} ${state.currentGame.operator} ${state.currentGame.numTwo}`
-    updateGame()
+    gameElement.innerHTML = `${state.currentGame.numOne} ${state.currentGame.operator} ${state.currentGame.numTwo}`;
+    updateGame();
 }
