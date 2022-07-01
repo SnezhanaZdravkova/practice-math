@@ -36,7 +36,7 @@ function generateGame(){
     }   
 }
 ourForm.addEventListener("submit", handleSubmit);
-//let e=event
+//let e=eventListner
 function handleSubmit(e){
     e.preventDefault();
     let correctAnswer
@@ -65,4 +65,23 @@ function handleSubmit(e){
         mistakesAllowed.textContent = 3 - result.wrongAnswer;
         updateGame();
     }
+    userAnswerCount();
 }
+function userAnswerCount(){
+    if(result.correctAnswer === 10){
+        alert("Congratulations! you won.");
+        resetGame();
+    }
+    if(result.wrongAnswer === 3){
+        alert("Sorry! You lose.")
+        resetGame();
+    }
+}
+function resetGame(){
+   updateGame();
+   result.score = 0;
+   result.wrongAnswer = 0;
+   pointsNeeded = 10;
+   mistakesAllowed = 3;
+}
+
