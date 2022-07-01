@@ -23,8 +23,7 @@ h1{
     border-radius: 10px;
     box-shadow: 2px 5px 10px #34495e;
     width: 700px;
-    height: 500px;    
-    align-items: center;
+    height: 500px;
     position: relative;   
     margin: 50px;
 }
