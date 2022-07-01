@@ -68,8 +68,8 @@ function handleSubmit(e){
     userAnswerCount();
 }
 function userAnswerCount(){
-    if(result.correctAnswer === 10){
-        alert("Congratulations! you won.");
+    if(result.score === 10){
+        alert("Congratulations! You won.");
         resetGame();
     }
     if(result.wrongAnswer === 3){
