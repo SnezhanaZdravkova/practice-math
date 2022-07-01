@@ -44,13 +44,13 @@ function handleSubmit(e){
     if(b.operator == "+"){
         correctAnswer = b.numOne + b.numTwo;
     }
-    if(b.operator == "-"){
+    else if(b.operator == "-"){
         correctAnswer = b.numOne - b.numTwo;
     }
-    if(b.operator == "x"){
+    else if(b.operator == "x"){
         correctAnswer = b.numOne * b.numTwo;
     }
-    if(b.operator == "/"){
+    else if(b.operator == "/"){
         //numOne *= numTwo;
         correctAnswer = b.numOne / b.numTwo;
     }
@@ -65,4 +65,5 @@ function handleSubmit(e){
         mistakesAllowed.textContent = 3 - result.wrongAnswer;
         updateGame();
     }
+    console.log(correctAnswer)
 }
