@@ -65,5 +65,4 @@ function handleSubmit(e){
         mistakesAllowed.textContent = 3 - result.wrongAnswer;
         updateGame();
     }
-    console.log(correctAnswer)
 }
