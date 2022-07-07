@@ -32,50 +32,74 @@ function generateGame(){
     return{
         numOne: generateNumber(25),
         numTwo: generateNumber(25),
-        operator: ["+", "-", "x", "/"][generateNumber(3)]   
+        operator: ["+", "-"][generateNumber(1)]   
     }   
 }
+// const b = result.currentGame;
+// function correctAnswer(){
+    
+//     let operator = ["+", "-"];
+//     for(let i = 0; i < index.lednth; i++){
+//        switch(b.operator){
+//         case 0: b.numOne + b.numTwo;
+//         break;
+//         case 1: b.numOne - b.numTwo;
+//         break;
+//         default: "Unknown Game!"
+//        }     
+//     }
+// }
 ourForm.addEventListener("submit", handleSubmit);
-//let e=eventListner
-function handleSubmit(e){
-    e.preventDefault();
-    let correctAnswer
-    const b = result.currentGame;
-    if(b.operator == "+"){
-        correctAnswer = b.numOne + b.numTwo;
-    }
-    else if(b.operator == "-"){
-        correctAnswer = b.numOne - b.numTwo;
-    }
-    else if(b.operator == "x"){
-        correctAnswer = b.numOne * b.numTwo;
-    }
-    else if(b.operator == "/"){
-        //numOne *= numTwo;
-        correctAnswer = b.numOne / b.numTwo;
-    }
+//let e = event,
+
+function handleSubmit(event){
+     event.preventDefault();
+    let correctAnswer;
+     if(b.operator == "+"){
+         correctAnswer = b.numOne + b.numTwo;
+     }
+     else if(b.operator == "-"){
+         correctAnswer = b.numOne - b.numTwo;
+     }
+    // else if(b.operator == "x"){
+    //     correctAnswer = b.numOne * b.numTwo;
+    // }
+    // else if(b.operator == "/"){
+        // b.numOne *= b.numTwo;
+    //     correctAnswer = b.numOne / b.numTwo;
+    // }
+
+    
     // this will compare the users answer with our correctAnswer
     //The function parseInt in javaScript will make the value number if it is a string
-    if(parseInt(ourField.value, 25) === correctAnswer){
-        result.score++;
-        pointsNeeded.textContent = 10 - result.score;
-        updateGame();
-    }else{
-        result.wrongAnswer++;
-        mistakesAllowed.textContent = 3 - result.wrongAnswer;
-        updateGame();
-    }
-    userAnswerCount();
-}
+     if(parseInt(ourField.value, 25) === correctAnswer){
+         result.score++;
+         pointsNeeded.textContent = 10 - result.score;
+         updateGame();
+     }else{
+         result.wrongAnswer++;
+         mistakesAllowed.textContent = 3 - result.wrongAnswer;
+         updateGame();
+     }
+     userAnswerCount();
+ }
+//let answerOptions = ["Congratulations! You won.", "Sorry! You lose."];
 function userAnswerCount(){
+    //const modal = document.getElementsByClassName("modal-container");
+    //modal.style.display = "block";
     if(result.score === 10){
-        alert("Congratulations! You won.");
+        //modal.style.background = "#1abc9c";
+        alert("Congratulations! You won.");  //ansuer.textContent = answerOptions[0];
         resetGame();
     }
     if(result.wrongAnswer === 3){
-        alert("Sorry! You lose.")
+        //modal.style.background = "#999";
+        alert("Sorry! You lose.") //answerOptions.textContent = answerOptions[1];
         resetGame();
     }
+//    close.addEventListener("click", function(){
+//     modal.style.display = "none";
+//});
 }
 function resetGame(){
    updateGame();
@@ -84,4 +108,9 @@ function resetGame(){
    pointsNeeded = 10;
    mistakesAllowed = 3;
 }
+let submit = document.getElementsByClassName("submit");
+// submit.addEventListener("click", function(){
+//     updateGame();
+// });
+
 

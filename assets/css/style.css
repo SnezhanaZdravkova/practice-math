@@ -61,6 +61,7 @@ button:hover{
     display: flex;
     align-items: center;
     background: #999;
+    display: none; 
 }
 .close{
     position: absolute;
