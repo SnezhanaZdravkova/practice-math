@@ -77,7 +77,6 @@ function handleSubmit(event){
      }else{
          result.wrongAnswer++;
          mistakesAllowed.textContent = 3 - result.wrongAnswer;
-         updateGame();
      }
      userAnswerCount();
  }
