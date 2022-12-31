@@ -80,23 +80,17 @@ function handleSubmit(event){
      }
      userAnswerCount();
  }
-//let answerOptions = ["Congratulations! You won.", "Sorry! You lose."];
+
 function userAnswerCount(){
-    //const modal = document.getElementsByClassName("modal-container");
-    //modal.style.display = "block";
+
     if(result.score === 10){
-        //modal.style.background = "#1abc9c";
-        alert("Congratulations! You won.");  //ansuer.textContent = answerOptions[0];
+        alert("Congratulations! You won.");
         resetGame();
     }
     if(result.wrongAnswer === 3){
-        //modal.style.background = "#999";
-        alert("Sorry! You lose.") //answerOptions.textContent = answerOptions[1];
+        alert("Sorry! You lose.");
         resetGame();
     }
-//    close.addEventListener("click", function(){
-//     modal.style.display = "none";
-//});
 }
 function resetGame(){
    updateGame();
@@ -105,9 +99,5 @@ function resetGame(){
    pointsNeeded = 10;
    mistakesAllowed = 3;
 }
-// let submit = document.getElementsByClassName("submit");
-// submit.addEventListener("click", function(){
-//     updateGame();
-// });
 
 
