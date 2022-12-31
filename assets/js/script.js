@@ -32,7 +32,7 @@ function generateGame(){
     return{
         numOne: generateNumber(25),
         numTwo: generateNumber(25),
-        operator: ["+", "-"][generateNumber(1)]   
+        operator: ["+", "-", "x", "/"][generateNumber(3)]   
     }   
 }
 // const b = result.currentGame;
@@ -50,24 +50,22 @@ function generateGame(){
 //     }
 // }
 ourForm.addEventListener("submit", handleSubmit);
-//let e = event,
 
 function handleSubmit(event){
-     event.preventDefault();
+    event.preventDefault();
     let correctAnswer;
-     if(b.operator == "+"){
-         correctAnswer = b.numOne + b.numTwo;
-     }
-     else if(b.operator == "-"){
-         correctAnswer = b.numOne - b.numTwo;
-     }
-    // else if(b.operator == "x"){
-    //     correctAnswer = b.numOne * b.numTwo;
-    // }
-    // else if(b.operator == "/"){
-        // b.numOne *= b.numTwo;
-    //     correctAnswer = b.numOne / b.numTwo;
-    // }
+    if(result.currentGame.operator == "+"){
+        correctAnswer = result.currentGame.numOne + result.currentGame.numTwo;
+    }
+    if(result.currentGame.operator == "-"){
+        correctAnswer = result.currentGame.numOne - result.currentGame.numTwo;
+    }
+    if(result.currentGame.operator == "x"){
+        correctAnswer = result.currentGame.numOne * result.currentGame.numTwo;
+    }
+    if(result.currentGame.operator == "/"){
+        correctAnswer = result.currentGame.numOne / result.currentGame.numTwo;
+    }
 
     
     // this will compare the users answer with our correctAnswer
@@ -108,7 +106,7 @@ function resetGame(){
    pointsNeeded = 10;
    mistakesAllowed = 3;
 }
-let submit = document.getElementsByClassName("submit");
+// let submit = document.getElementsByClassName("submit");
 // submit.addEventListener("click", function(){
 //     updateGame();
 // });
