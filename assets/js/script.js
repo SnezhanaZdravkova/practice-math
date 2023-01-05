@@ -32,23 +32,10 @@ function generateGame(){
     return{
         numOne: generateNumber(25),
         numTwo: generateNumber(25),
-        operator: ["+", "-", "x", "/"][generateNumber(3)]   
+        operator: ["+", "-", "x"][generateNumber(2)]   
     }   
 }
-// const b = result.currentGame;
-// function correctAnswer(){
-    
-//     let operator = ["+", "-"];
-//     for(let i = 0; i < index.lednth; i++){
-//        switch(b.operator){
-//         case 0: b.numOne + b.numTwo;
-//         break;
-//         case 1: b.numOne - b.numTwo;
-//         break;
-//         default: "Unknown Game!"
-//        }     
-//     }
-// }
+
 ourForm.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event){
@@ -63,9 +50,6 @@ function handleSubmit(event){
     if(result.currentGame.operator == "x"){
         correctAnswer = result.currentGame.numOne * result.currentGame.numTwo;
     }
-    if(result.currentGame.operator == "/"){
-        correctAnswer = result.currentGame.numOne / result.currentGame.numTwo;
-    }
 
     
     // this will compare the users answer with our correctAnswer
@@ -76,7 +60,7 @@ function handleSubmit(event){
          updateGame();
      }else{
          result.wrongAnswer++;
-         mistakesAllowed.textContent = 3 - result.wrongAnswer;
+         mistakesAllowed.textContent = 2 - result.wrongAnswer;
      }
      userAnswerCount();
  }
@@ -97,7 +81,7 @@ function resetGame(){
    result.score = 0;
    result.wrongAnswer = 0;
    pointsNeeded = 10;
-   mistakesAllowed = 3;
+   mistakesAllowed = 2;
 }
 
 
