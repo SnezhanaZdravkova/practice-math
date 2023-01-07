@@ -54,6 +54,19 @@ button:hover{
 .progresBar{
     border: 1px solid #999;
     border-right: none;
+    position: relative;
+    border-radius: 4px;
+}
+.progress-inner{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #1abc9c;
+    opacity: .57;
+    transform: scaleX(0);
+    transform-origin: center left;
+    transition: transform .4s ease-out;
 }
 .box{
     height: 40px;
