@@ -1,4 +1,4 @@
-// THe game variables 
+// The game variables 
 const gameElement = document.querySelector(".game")
 const ourForm = document.querySelector(".our-form")
 const ourField = document.querySelector(".our-field")
@@ -40,29 +40,21 @@ ourForm.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event){
     event.preventDefault();
-    let correctAnswer;
-    if(result.currentGame.operator == "+"){
-        correctAnswer = result.currentGame.numOne + result.currentGame.numTwo;
-    }
-    if(result.currentGame.operator == "-"){
-        correctAnswer = result.currentGame.numOne - result.currentGame.numTwo;
-    }
-    if(result.currentGame.operator == "x"){
-        correctAnswer = result.currentGame.numOne * result.currentGame.numTwo;
-    }
 
+    const question = document.querySelector('.game').innerHTML.replace('x', '*')
+    const correctAnswer = eval(question);
     
-    // this will compare the users answer with our correctAnswer
-    //The function parseInt in javaScript will make the value number if it is a string
-     if(parseInt(ourField.value, 25) === correctAnswer){
-         result.score++;
-         pointsNeeded.textContent = 10 - result.score;
-         updateGame();
-     }else{
-         result.wrongAnswer++;
-         mistakesAllowed.textContent = 2 - result.wrongAnswer;
-     }
-     userAnswerCount();
+    if (Number(correctAnswer) === Number(event.target.userAnswer.value)) {
+        result.score++;
+        pointsNeeded.textContent = 10 - result.score;
+        updateGame();
+    }
+    else {
+        result.wrongAnswer++;
+        mistakesAllowed.textContent = 2 - result.wrongAnswer;
+        updateGame();
+    }
+    userAnswerCount();
  }
 
 function userAnswerCount(){
