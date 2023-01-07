@@ -68,12 +68,13 @@ function userAnswerCount(){
         resetGame();
     }
 }
+// Function to reset Game
 function resetGame(){
    updateGame();
    result.score = 0;
    result.wrongAnswer = 0;
-   pointsNeeded = 10;
-   mistakesAllowed = 2;
+   pointsNeeded.textContent = 10;
+   mistakesAllowed.textContent = 2;
 }
 
 
