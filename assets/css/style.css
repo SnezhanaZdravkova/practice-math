@@ -47,6 +47,19 @@ button{
 button:hover{
     cursor: pointer;
 }
+.boxes{
+    display: flex;
+    width: 100%;
+}
+.progresBar{
+    border: 1px solid #999;
+    border-right: none;
+}
+.box{
+    height: 40px;
+    border-right: 1px solid #999;
+    flex: 1;
+}
 /* Styling the modal */
 .modal-container{
     position: absolute;
