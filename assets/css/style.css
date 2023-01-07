@@ -44,10 +44,10 @@ button{
     padding: 10px;
     margin: 25px;
 }
-button:hover{
+button:hover {
     cursor: pointer;
 }
-.boxes{
+.boxes {
     display: flex;
     width: 100%;
 }
@@ -72,6 +72,28 @@ button:hover{
     height: 40px;
     border-right: 1px solid #999;
     flex: 1;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, .99);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s ease-out;
+    transform: scale(1.2);
+}
+
+body.overlay-cover .overlay{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
 }
 /* Styling the modal */
 .modal-container{

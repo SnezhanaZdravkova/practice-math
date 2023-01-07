@@ -5,6 +5,8 @@ const ourField = document.querySelector(".our-field")
 const pointsNeeded = document.querySelector(".points-needed")
 const mistakesAllowed = document.querySelector(".mistakes-allowed")
 const progressBar = document.querySelector(".progress-inner")
+const lastMessage = document.querySelector(".last-message")
+const startOverButton = document.querySelector(".start-over")
 
 //initials results: correct and incorrect 
 let result = {
@@ -62,22 +64,25 @@ function handleSubmit(event){
 function userAnswerCount(){
 
     if(result.score === 10){
-        alert("Congratulations! You won.");
-        resetGame();
+        lastMessage.textContent = "Congratulations! You won!"
+        document.body.classList.add("overlay-cover")
     }
     if(result.wrongAnswer === 3){
-        alert("Sorry! You lose.");
-        resetGame();
+        lastMessage.textContent = "Sorry! You lost!"
+        document.body.classList.add("overlay-cover")
     }
 }
+
+startOverButton.addEventListener("click", resetGame);
 // Function to reset Game
 function resetGame(){
-   updateGame();
-   result.score = 0;
-   result.wrongAnswer = 0;
-   pointsNeeded.textContent = 10;
-   mistakesAllowed.textContent = 2;
-   renderProgressBar()
+    document.body.classList.remove("overlay-cover");
+    updateGame();
+    result.score = 0;
+    result.wrongAnswer = 0;
+    pointsNeeded.textContent = 10;
+    mistakesAllowed.textContent = 2;
+    renderProgressBar()
 }
 
 function renderProgressBar(){
