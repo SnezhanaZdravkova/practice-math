@@ -96,27 +96,3 @@ body.overlay-cover .overlay{
     transform: scale(1);
 }
 /* Styling the modal */
-.modal-container{
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    width: 80%;
-    height: 100px;
-    border: 1px solid #555;
-    border-radius: 10px;
-    padding: 20px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    background: #999;
-    display: none; 
-}
-.close{
-    position: absolute;
-    top: 0;
-    right: 10px;
-    font-size: 30px;
-}
-.close:hover{
-    cursor: pointer;
-}
