@@ -95,4 +95,13 @@ body.overlay-cover .overlay{
     visibility: visible;
     transform: scale(1);
 }
-/* Styling the modal */
+/* For small screen sizes 800px and down */
+@media screen and (max-width: 800px){
+    .main {
+        width: 70%;
+        height: 500px;
+    }
+    #result {
+        width: 85%;
+    }
+}
