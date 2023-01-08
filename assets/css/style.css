@@ -7,14 +7,14 @@
 
 body{
     color: black;
-    font-family: 'Roboto', serif;
+    font-family: 'Roboto', 'Public Sans';
     font-size: 28px;
     background-image: url("../images/great-gable-1056451.jpg");
     background-color: aquamarine;
     position: relative;
 }
 h1{
-    font-family: 'Oswald' sans-serif;
+    font-family: 'Oswald', 'Public Sans';
     text-align: center;
 }
 .main{
