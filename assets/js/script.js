@@ -1,18 +1,18 @@
 // The game variables 
-const gameElement = document.querySelector(".game")
-const ourForm = document.querySelector(".our-form")
-const ourField = document.querySelector(".our-field")
-const pointsNeeded = document.querySelector(".points-needed")
-const mistakesAllowed = document.querySelector(".mistakes-allowed")
-const progressBar = document.querySelector(".progress-inner")
-const lastMessage = document.querySelector(".last-message")
-const startOverButton = document.querySelector(".start-over")
+const gameElement = document.querySelector(".game");
+const ourForm = document.querySelector(".our-form");
+const ourField = document.querySelector(".our-field");
+const pointsNeeded = document.querySelector(".points-needed");
+const mistakesAllowed = document.querySelector(".mistakes-allowed");
+const progressBar = document.querySelector(".progress-inner");
+const lastMessage = document.querySelector(".last-message");
+const startOverButton = document.querySelector(".start-over");
 
 //initials results: correct and incorrect 
 let result = {
     score: 0,
     wrongAnswer: 0
-}
+};
 /**
  * The main game "loop", called when the script is first loaded and after the users answer has been processed 
  */
@@ -36,7 +36,7 @@ function generateGame(){
         numOne: generateNumber(25),
         numTwo: generateNumber(25),
         operator: ["+", "-", "x"][generateNumber(2)]   
-    }   
+    };  
 }
 
 ourForm.addEventListener("submit", handleSubmit);
@@ -44,14 +44,14 @@ ourForm.addEventListener("submit", handleSubmit);
 function handleSubmit(event){
     event.preventDefault();
 
-    const question = document.querySelector('.game').innerHTML.replace('x', '*')
+    const question = document.querySelector('.game').innerHTML.replace('x', '*');
     const correctAnswer = eval(question);
     
     if (Number(correctAnswer) === Number(event.target.userAnswer.value)) {
         result.score++;
         pointsNeeded.textContent = 10 - result.score;
         updateGame();
-        renderProgressBar()
+        renderProgressBar();
     }
     else {
         result.wrongAnswer++;
@@ -64,12 +64,12 @@ function handleSubmit(event){
 function userAnswerCount(){
 
     if(result.score === 10){
-        lastMessage.textContent = "Congratulations! You won!"
-        document.body.classList.add("overlay-cover")
+        lastMessage.textContent = "Congratulations! You won!";
+        document.body.classList.add("overlay-cover");
     }
     if(result.wrongAnswer === 3){
-        lastMessage.textContent = "Sorry! You lost!"
-        document.body.classList.add("overlay-cover")
+        lastMessage.textContent = "Sorry! You lost!";
+        document.body.classList.add("overlay-cover");
     }
 }
 
@@ -82,11 +82,11 @@ function resetGame(){
     result.wrongAnswer = 0;
     pointsNeeded.textContent = 10;
     mistakesAllowed.textContent = 2;
-    renderProgressBar()
+    renderProgressBar();
 }
 
 function renderProgressBar(){
-    progressBar.style.transform = `scaleX(${result.score / 10})`
+    progressBar.style.transform = `scaleX(${result.score / 10})`;
 }
 
 
