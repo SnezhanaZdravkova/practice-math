@@ -3,6 +3,7 @@
 ## Math Game
 
 Welcome! [Project link](https://snezhanazdravkova.github.io/practice-math/)
+![View](/assets/images/mockup.png)
 
 
 
@@ -26,15 +27,16 @@ Welcome! [Project link](https://snezhanazdravkova.github.io/practice-math/)
 ## Testing
 
 ### HTML Checker
-> [No Errors found]()
+> ![No Errors found](/assets/images/html_test.png)
 ### W3C CSS Validator
-> [No Errors or Warnings found]()
+> ![No Errors or Warnings found](/assets/images/css_test.png)
 ### Java Script testing
 > run this game through the JSHint checker:
 - When I do, I see it comes up with 1 warning:
 > it is "eval can be harmful".
+![JSHint Checker](/assets/images/js_test.png)
 ### Lighthouse Check
-> [Image available]()
+> ![Image available](/assets/images/lighthouse_test.png)
 
 ## Deployment
 ### GitHub Pages
