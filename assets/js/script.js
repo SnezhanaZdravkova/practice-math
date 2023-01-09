@@ -1,3 +1,4 @@
+/* eslint no-eval: 0 */
 // The game variables 
 const gameElement = document.querySelector(".game");
 const ourForm = document.querySelector(".our-form");
@@ -23,8 +24,9 @@ function updateGame(){
     ourField.value = "";
     ourField.focus();
 }
+
 updateGame();
-//function - creates random number between 1 and 25
+/** function - creates random number between 1 and 25 */
 function generateNumber(max){
     return Math.floor(Math.random() * max) + 1;
 }
@@ -59,8 +61,9 @@ function handleSubmit(event){
         updateGame();
     }
     userAnswerCount();
- }
+}
 
+/** Count user's answers and bring averlay cover at the end */
 function userAnswerCount(){
 
     if(result.score === 10){
@@ -74,7 +77,7 @@ function userAnswerCount(){
 }
 
 startOverButton.addEventListener("click", resetGame);
-// Function to reset Game
+/**  Function to reset Game */
 function resetGame(){
     document.body.classList.remove("overlay-cover");
     updateGame();
