@@ -2,35 +2,57 @@
 
 ## Math Game
 
-Welcome! [Project link](https://snezhanazdravkova.github.io/practice-math/)
+Welcome! 
+You can view the deployed website [here](https://snezhanazdravkova.github.io/practice-math/)
 ![View](/assets/images/mockup.png)
 
 
+Math Game is designed for yang children to practice math and develop there math's skills. But also it is suitable for any one in elderly age to get there brains working and remembering.
 
-## Technologies Used
+## User Experience
+If You could imagine You are on the top of the mountains relaxing from all the stress in the world and playing an easy math game.
+The math question is easy to see. The operands are randomly picked up numbers between 1 and 25. The operator is also randomly picked up between "+"(addition), "-"(subtraction) and "x"(multiplication).
 
+For even better User experience there is a function to count the correct and incorrect answers and the User can see how many times he need to answer correct to win and how many mistakes he is allowed.
 
-### Languages Used
-- HTML5
-- CSS
+There is a progress bar, which also improves the user experience and with every correct answer the progress bar fills up in green.
+
+If the User has 10 correct answers he wins. The screen overlay-covers and congrats message "Congratulations! You won!" pops up and there is a button to give an opportunity to User to play again.
+
+In case the User loses the game the message is "Sorry! You lose!", and the opportunity to play again is there, because the start over button resets the game.
+
+### Future UX
+
+- If I have chance in the future I would let Users to sign up and store there results.
+- I would show the correct answer in case User gives wrong one.
+- like that learning process would be easier.
+
+## Technologies/Support Used
+
+- HTML5 is used to provide the structure and content of the website.
+- CSS is used via link to the HTML to provided style the pages.
 - JAVASCRIPT
-
-### Frameworks, Libraries, Programs Used
-1. Google fonts
-2. Font Awesome
-3. Git
-4. GitHub
-5. [Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/)
+- Code Institute lessons and the Love Maths assisting with my project in how to use JavaScript.
+- JSHint to run my JavaScript code though
+- Git used to code within and provided backups of all my code.
+- GitHub for my repository and external project deployment.
+- Google Fonts for my font choose for the project.
+- Favicon.ico for adding a nice little personal touch to my page
+- W3S Schools for code assistance and information
+- [Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/)
 
 
 
 ## Testing
-
+- Testing During development of the pages was done through the project to see how the project looked and felt
+- Manual Testing
 ### HTML Checker
 > ![No Errors found](/assets/images/html_test.png)
 ### W3C CSS Validator
 > ![No Errors or Warnings found](/assets/images/css_test.png)
 ### Java Script testing
+> JavaScript testing done via dev tools in Microsoft Edge via console.log
+
 > run this game through the JSHint checker:
 - When I do, I see it comes up with 1 warning:
 > it is "eval can be harmful".
@@ -38,6 +60,12 @@ Welcome! [Project link](https://snezhanazdravkova.github.io/practice-math/)
 ### Lighthouse Check
 > ![Image available](/assets/images/lighthouse_test.png)
 
+## Bugs
+"eval can be harmful"
+I asked several people, Did research on Google and Stackoverflow.com, but couldn't solve it.
+I found this advice, but the warning is thil there:
+/* eslint no-eval: 0 */
+![this is the screenshot](/assets/images/Screenshot%20(110).png)
 ## Deployment
 ### GitHub Pages
 The project was deployed to GitHub Pages using the following steps:
